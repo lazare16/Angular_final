@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from '../../components/login/login.component';
-import { HomeComponent } from '../../components/home/home.component';
-import { AdminComponent } from '../../components/admin/admin.component';
-import { UnauthorizedComponent } from '../../components/unauthorized/unauthorized.component';
-import { AuthGuard } from '../../guard/auth.guard';
+import { LoginComponent } from '../components/login/login.component';
+import { HomeComponent } from '../components/home/home.component';
+import { AdminComponent } from '../components/admin/admin.component';
+import { UnauthorizedComponent } from '../components/unauthorized/unauthorized.component';
+import { AuthGuard } from '../guard/auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
