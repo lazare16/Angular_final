@@ -1,0 +1,6 @@
+<nav>
+    <a routerLink="/home">Home</a>
+    <a *ngIf="authService.getRole() === 'admin'" routerLink="/admin">Admin</a>
+    <button (click)="logout()" *ngIf="authService.isLoggedIn()">Logout</button>
+  </nav>
+  
