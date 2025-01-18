@@ -17,8 +17,7 @@ export class LoginComponent {
   login() {
     const token = this.authService.login(this.username, this.password);
     if (token) {
-      // Navigate to home page after login
-      this.router.navigate(['/home']);
+      this.router.navigate(['/home']); // Redirect to home page
     } else {
       this.errorMessage = 'Invalid username or password';
     }
