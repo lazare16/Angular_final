@@ -9,8 +9,6 @@ export class AuthService {
     { username: 'user', password: 'user123', role: 'user' },
   ];
 
-  private currentUser: any = null;
-
   constructor() {}
 
   // Simulate login
@@ -23,7 +21,6 @@ export class AuthService {
       // Simulate a JWT token with role info
       const token = btoa(JSON.stringify({ username: user.username, role: user.role }));
       localStorage.setItem('authToken', token);
-      this.currentUser = user;
       return token;
     }
     return null;
@@ -34,7 +31,7 @@ export class AuthService {
     return localStorage.getItem('authToken') !== null;
   }
 
-  // Get current user role
+  // Get current user's role
   getRole(): string | null {
     const token = localStorage.getItem('authToken');
     if (token) {
@@ -47,6 +44,5 @@ export class AuthService {
   // Logout
   logout(): void {
     localStorage.removeItem('authToken');
-    this.currentUser = null;
   }
 }
